@@ -1,0 +1,29 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.1 (swiftlang-1100.0.270.13 clang-1100.0.33.7)
+// swift-module-flags: -target armv7-apple-ios8.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name RichFlyerEvent
+import Foundation
+@_exported import RichFlyerEvent
+import Swift
+public struct SendEventOption : Swift.OptionSet {
+  public let rawValue: Swift.Int
+  public init(rawValue: Swift.Int)
+  public static let firebase: RichFlyerEvent.SendEventOption
+  public static let google: RichFlyerEvent.SendEventOption
+  public static let facebook: RichFlyerEvent.SendEventOption
+  public static let flurry: RichFlyerEvent.SendEventOption
+  public static let all: RichFlyerEvent.SendEventOption
+  public static let none: RichFlyerEvent.SendEventOption
+  public typealias Element = RichFlyerEvent.SendEventOption
+  public typealias ArrayLiteralElement = RichFlyerEvent.SendEventOption
+  public typealias RawValue = Swift.Int
+}
+@objc public class LogEventsUtil : ObjectiveC.NSObject {
+  public static func setLogForFirebase(closure: @escaping (Swift.String, Swift.Dictionary<Swift.String, Any>?) -> Swift.Void)
+  public static func setLogForGoogle(closure: @escaping (Swift.String, Swift.String, Swift.Dictionary<Swift.String, Any>?) -> Swift.Void)
+  public static func setLogForFacebook(closure: @escaping (Swift.String, Swift.Dictionary<Swift.String, Any>?) -> Swift.Void)
+  public static func setLogForFlurry(closure: @escaping (Swift.String, Swift.Dictionary<Swift.String, Any>?) -> Swift.Void)
+  public static func sendEventLog(eventName: Swift.String, param: Swift.Dictionary<Swift.String, Any>?, option: RichFlyerEvent.SendEventOption = [.none])
+  public static func sendEventLog(eventName: Swift.String, category: Swift.String, param: Swift.Dictionary<Swift.String, Any>?, option: RichFlyerEvent.SendEventOption = [.none])
+  @objc override dynamic public init()
+  @objc deinit
+}
